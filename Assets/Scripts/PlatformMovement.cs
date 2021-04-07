@@ -18,7 +18,10 @@ namespace Platform
 
         private void MovePlatform(float targetPosX)
         {
-            transform.DOMoveX(targetPosX, mov.Speed, false).SetEase(easeM).OnComplete(() => {MovePlatform(-targetPosX); });
+            transform.DOMoveX(targetPosX, mov.Speed, false).
+                SetEase(easeM).
+               // SetDelay(Random.Range(1,3)).
+                OnComplete(() => {MovePlatform(-targetPosX); });
         }
     }
 }
